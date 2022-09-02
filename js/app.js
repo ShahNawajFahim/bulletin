@@ -26,6 +26,7 @@ const laodspecific = async (category_id) => {
 
 const displayNews = news => {
     const newsContainer = document.getElementById('news-container');
+    newsContainer.textContent = '';
     news.forEach(info => {
         const newsDiv = document.createElement('div');
 
@@ -40,7 +41,7 @@ const displayNews = news => {
                 <h5 class="card-title">${info.title}</h5>
                 <p>${info.details}</p>
                 <div>
-                <img src="${info.author.img}" class='rounded' alt="">
+                <img src="${info.author}" class='rounded' alt="">
                 <p class="card-text"><small class="">${info.author.name} </small></p>
                 </div>
                 <p class="card-text">views:${info.total_view}</p>
