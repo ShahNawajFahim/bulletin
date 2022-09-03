@@ -11,6 +11,8 @@ const loadCategories = async () => {
     }
 
 }
+
+// nav onclick function ...... 
 const displayNav = nav => {
     const navContainer = document.getElementById('category-container');
     nav.forEach(bulletin => {
@@ -32,7 +34,7 @@ const laodspecific = async (category_id) => {
     }
 }
 
-
+// card showing... 
 const displayNews = news => {
     const newsContainer = document.getElementById('news-container');
     newsContainer.textContent = '';
@@ -57,7 +59,7 @@ const displayNews = news => {
                 <img src="${info.author.img}" class='rounded' alt="" style: 'height=30px width= 30px'>
                 <p class="card-text"><small class="">${info.author.name} </small></p>
                 </div>
-                <div class='px-5 pt-3'><p class="card-text">views:${info.total_view}</p></div>
+                <div class='px-5 pt-3'><p class="card-text"><i class="fa-regular fa-eye"></i>:${info.total_view}</p></div>
                 <div class='px-5 pt-3 '>
                 <button id='show-more' class='bg-dark text-white rounded'onclick="laodNewsModal('${info._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal">Show More</button>
                 </div>
@@ -76,11 +78,14 @@ const displayNews = news => {
     const resultCon = document.getElementById("result-cont")
     resultCon.classList.remove("d-none");
     resultNumber.innerText = result;
+    if (result == 0) {
+        resultNumber.innerText = `No`;
+    }
 
 
 }
 
-
+// news fetching... 
 const laodNewsModal = async (_id) => {
 
     try {
@@ -95,7 +100,7 @@ const laodNewsModal = async (_id) => {
 
 }
 
-
+// for opening modal... 
 const displayNewsModal = modals => {
     console.log(modals);
     const modalTitle = document.getElementById('exampleModalLabel');
@@ -113,13 +118,10 @@ const displayNewsModal = modals => {
 
 }
 
-
+// for spin loadTIme.. 
 
 document.getElementById('category-container').addEventListener('click', function () {
     toggleSpin(true);
-    // const counting = document.getElementById('form-control');
-    // const countingItem = counting.innerText;
-
 
 
 })
