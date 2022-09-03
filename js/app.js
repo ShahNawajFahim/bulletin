@@ -46,15 +46,15 @@ const displayNews = news => {
     news.forEach(info => {
         const newsDiv = document.createElement('div');
         // console.log(info)
-        info.details = info.details.slice(0, 400) + ".....";
+        info.details = info.details.slice(0, 300) + ".....";
 
         newsDiv.classList.add('card');
         newsDiv.innerHTML = `
-        <div class="row g-0">
-        <div class="col-md-4">
-            <img src="${info.image_url}" class="img-fluid rounded-start" alt="...">
+        <div class="row g-0 m-3">
+        <div class="col-md-3 d-flex justify-content-center">
+            <img src="${info.thumbnail_url}" class="img-fluid rounded-start" alt="...">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
             <div class="card-body">
                 <h5 class="card-title">${info.title}</h5>
                 <p>${info.details}</p>
@@ -113,8 +113,8 @@ const displayNewsModal = modals => {
         modalTitle.innerText = element.title;
         const modalDetails = document.getElementById('news_category');
         modalDetails.innerHTML = `
+        <img src="${element.thumbnail_url}" alt="">
         <p> Details: ${element.details} </p>
-        <p>  ${element.thumbnail_url} </p>
         <p> Author: ${element.author.name ? element.author.name : 'Anonymous Author'} </p> 
         <p> Total_view: ${element.total_view ? element.total_view : 'No view.'} </p> `
 
