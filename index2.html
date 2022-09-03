@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body class="bg-secondary ">
+    <header>
+        <section class="container mt-4 fw-bold">
+            <div>
+                <nav class="navbar ">
+                    <div class="container">
+                        <a class="navbar-brand">Bulletin</a>
+                        <form class="d-flex" role="search">
+                            <a class="nav-link active px-3" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index2.html">Blog</a>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <hr>
+        </section>
+    </header>
+
+    <main class="container">
+
+        <div class="row container d-felx justify-content-around">
+            <div class="col-12 col-lg-4 col-md-6 card text-bg-success mb-3 " style="max-width: 18rem;">
+                <div class="card-header">
+                    <h3 class="text-dark">Difference between var ,let and const</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">JavaScript has three variable declaration statements: var, let and const. The
+                        latter two were added in ES6, whereas var existed since previous versions. One of the first
+                        things
+                        to notice is that const defines constants (i.e. values that will not be reassigned), whereas var
+                        and
+                        let define variables. Yet, var behaves differently from both let and const in various other
+                        ways.
+                    </p>
+                    <p class="text-warning">1.Variables declared with var are function scoped, in contrast to variables
+                        declared with let or
+                        const which are block scoped.</p>
+                    <p class="text-warning">
+                        2.While variables declared with var are hoisted to the enclosing scope, variables declared with
+                        let
+                        or const are not initialized until their definition is evaluated.
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="col-12 col-lg-4 col-md-6 card text-bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                    <h3 class="text-dark">Difference between map ,forEach,filter and find</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">forEach(), .map() and .filter(). When you go to loop through (or iterate
+                        through) an array, the first thing you think of is probably a for loop. .forEach(), .map() and
+                        .filter() are all just other ways of iterating through arrays to perform a specific task on each
+                        element of the array, and are called methods.
+                    </p>
+                    <p class="text-warning">map : Transform elements in an array.</p>
+                    <p class="text-warning">filter : Select a subset of multiple elements from an array.</p>
+                    <p class="text-warning">find : Select a single element from an array.</p>
+                    <p class="text-warning">forEach : forEach just loop over the array and executes the callback.</p>
+                </div>
+            </div>
+
+
+
+            <div class="col-12 col-lg-4 col-md-6 card text-bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                    <h3 class="text-dark">Difference between arrow function and normal function</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Arrow function — also called fat arrow function— is a new feature introduced in
+                        ES6 that is a more concise syntax for writing function expressions. While both regular
+                        JavaScript functions and arrow functions work in a similar manner, there are certain differences
+                        between them.
+                    </p>
+                    <p class="text-warning">1.The first and most obvious difference between arrow functions and regular
+                        functions is their
+                        syntax. Not only do they look different, but arrow functions also provide an implicit return
+                        shorthand and allow parenthesis around a single argument to be omitted.</p>
+                    <p class="text-warning">2.Another difference is the binding of the arguments object. Unlike regular
+                        functions, arrow
+                        functions don't have their own arguments object. A modern alternative that circumvents this
+                        limitation is the usage of rest parameters.</p>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

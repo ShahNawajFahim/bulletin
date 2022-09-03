@@ -40,7 +40,7 @@ const displayNews = news => {
     news.forEach(info => {
         const newsDiv = document.createElement('div');
         // console.log(info)
-        info.details = info.details.slice(0, 500) + ".....";
+        info.details = info.details.slice(0, 400) + ".....";
 
         newsDiv.classList.add('card');
         newsDiv.innerHTML = `
