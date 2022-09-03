@@ -38,6 +38,10 @@ const laodspecific = async (category_id) => {
 const displayNews = news => {
     const newsContainer = document.getElementById('news-container');
     newsContainer.textContent = '';
+    console.log(news)
+    news.sort(function (x, y) {
+        return y.total_view - x.total_view;
+    });
 
     news.forEach(info => {
         const newsDiv = document.createElement('div');
@@ -57,9 +61,9 @@ const displayNews = news => {
                 <div class='d-flex '>
                 <div>
                 <img src="${info.author.img}" class='rounded' alt="" style: 'height=30px width= 30px'>
-                <p class="card-text"><small class="">${info.author.name} </small></p>
+                <p class="card-text"><small class="">${info.author.name ? info.author.name : "Anonymous Author"} </small></p>
                 </div>
-                <div class='px-5 pt-3'><p class="card-text"><i class="fa-regular fa-eye"></i>:${info.total_view}</p></div>
+                <div class='px-5 pt-3'><p class="card-text"><i class="fa-regular fa-eye"></i>:${info.total_view ? info.total_view : "No View"}</p></div>
                 <div class='px-5 pt-3 '>
                 <button id='show-more' class='bg-dark text-white rounded'onclick="laodNewsModal('${info._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal">Show More</button>
                 </div>
@@ -112,11 +116,17 @@ const displayNewsModal = modals => {
         <p> Details: ${element.details} </p>
         <p>  ${element.thumbnail_url} </p>
         <p> Author: ${element.author.name ? element.author.name : 'Anonymous Author'} </p> 
-        <p> Total_view: ${element.total_view ? element.total_view : 'No view of this news.'} </p> `
+        <p> Total_view: ${element.total_view ? element.total_view : 'No view.'} </p> `
+
+
+
     });
 
 
 }
+
+
+
 
 // for spin loadTIme.. 
 
