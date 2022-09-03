@@ -9,7 +9,7 @@ const displayNav = nav => {
     const navContainer = document.getElementById('category-container');
     nav.forEach(bulletin => {
         const bulletinDiv = document.createElement('div');
-        bulletinDiv.innerHTML = `<h5 onclick="laodspecific(${bulletin.category_id})" > ${bulletin.category_name}</h5>`;
+        bulletinDiv.innerHTML = `<h5  onclick="laodspecific(${bulletin.category_id})" > ${bulletin.category_name}</h5>`;
         navContainer.appendChild(bulletinDiv);
 
     })
