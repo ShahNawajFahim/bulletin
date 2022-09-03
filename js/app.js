@@ -1,8 +1,14 @@
 const loadCategories = async () => {
-    const url = `https://openapi.programming-hero.com/api/news/categories`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayNav(data.data.news_category);
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/categories`;
+        const res = await fetch(url);
+        const data = await res.json();
+        displayNav(data.data.news_category);
+
+    }
+    catch (err) {
+        console.log(err);
+    }
 
 }
 const displayNav = nav => {
@@ -29,6 +35,8 @@ const displayNews = news => {
 
     news.forEach(info => {
         const newsDiv = document.createElement('div');
+        // console.log(info)
+        info.details = info.details.slice(0, 500) + ".....";
 
         newsDiv.classList.add('card');
         newsDiv.innerHTML = `
@@ -57,6 +65,15 @@ const displayNews = news => {
 
     })
     toggleSpin(false);
+    //Result count code 
+    const result = newsContainer.childNodes.length;
+    // console.log(result);
+    const resultNumber = document.getElementById("result-number");
+    const resultCon = document.getElementById("result-cont")
+    resultCon.classList.remove("d-none");
+    resultNumber.innerText = result;
+
+
 }
 
 
@@ -90,6 +107,8 @@ const displayNewsModal = modals => {
 
 document.getElementById('category-container').addEventListener('click', function () {
     toggleSpin(true);
+    // const counting = document.getElementById('form-control');
+    // const countingItem = counting.innerText;
 
 
 
