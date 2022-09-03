@@ -9,7 +9,7 @@ const displayNav = nav => {
     const navContainer = document.getElementById('category-container');
     nav.forEach(bulletin => {
         const bulletinDiv = document.createElement('div');
-        bulletinDiv.innerHTML = `<h5  onclick="laodspecific(${bulletin.category_id})" > ${bulletin.category_name}</h5>`;
+        bulletinDiv.innerHTML = `<h5 onclick="laodspecific(${bulletin.category_id})" > ${bulletin.category_name}</h5>`;
         navContainer.appendChild(bulletinDiv);
 
     })
@@ -56,6 +56,7 @@ const displayNews = news => {
         newsContainer.appendChild(newsDiv);
 
     })
+    toggleSpin(false);
 }
 
 
@@ -78,14 +79,31 @@ const displayNewsModal = modals => {
         modalDetails.innerHTML = `
         <p> Details: ${element.details} </p>
         <p>  ${element.thumbnail_url} </p>
-        <p> Author: ${element.author.name} </p> 
-        <p> Total_view: ${element.total_view} </p> `
+        <p> Author: ${element.author.name ? element.author.name : 'Anonymous Author'} </p> 
+        <p> Total_view: ${element.total_view ? element.total_view : 'No view of this news.'} </p> `
     });
 
 
 }
 
 
+
+document.getElementById('category-container').addEventListener('click', function () {
+    toggleSpin(true);
+
+
+
+})
+
+const toggleSpin = isLoading => {
+    const loadingSpin = document.getElementById('spin');
+    if (isLoading) {
+        loadingSpin.classList.remove('d-none');
+    }
+    else {
+        loadingSpin.classList.add('d-none');
+    }
+}
 
 
 
