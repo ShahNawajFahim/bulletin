@@ -54,19 +54,21 @@ const displayNews = news => {
         <div class="col-md-3 d-flex justify-content-center">
             <img src="${info.thumbnail_url}" class="img-fluid rounded-start" alt="...">
         </div>
-        <div class="col-md-7">
+        <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">${info.title}</h5>
                 <p>${info.details}</p>
+                <div>
                 <div class='d-flex '>
                 <div>
                 <img src="${info.author.img}" class='rounded' alt="" style: 'height=30px width= 30px'>
                 <p class="card-text"><small class="">${info.author.name ? info.author.name : "Anonymous Author"} </small></p>
                 </div>
                 <div class='px-5 pt-3'><p class="card-text"><i class="fa-regular fa-eye"></i>:${info.total_view ? info.total_view : "No View"}</p></div>
-                <div class='px-5 pt-3 '>
-                <button id='show-more' class='bg-dark text-white rounded'onclick="laodNewsModal('${info._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal">Show More</button>
                 </div>
+                <div class='px-5 pt-3 mt-5'>
+                <button id='show-more' class='bg-dark text-white rounded'onclick="laodNewsModal('${info._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal">Show More</button>
+                
                 </div>
             </div>
         </div>
@@ -115,7 +117,7 @@ const displayNewsModal = modals => {
         modalDetails.innerHTML = `
         <img src="${element.thumbnail_url}" alt="">
         <p> Details: ${element.details} </p>
-        <p> Author: ${element.author.name ? element.author.name : 'Anonymous Author'} </p> 
+         <p> Author: ${element.author.name ? element.author.name : 'Anonymous Author'} </p> 
         <p> Total_view: ${element.total_view ? element.total_view : 'No view.'} </p> `
 
 
